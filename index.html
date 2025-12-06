@@ -29,7 +29,7 @@
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         backdrop-filter: blur(8px);
         animation: fadeIn 1.2s ease-out;
-        margin-bottom: 80px; /* Make space for footer */
+        margin-bottom: 80px;
       }
 
       h1 {
@@ -48,15 +48,21 @@
         position: fixed;
         bottom: 20px;
         font-size: 0.85rem;
-        opacity: 0.6;
+        opacity: 0.75;
         color: #cbd5e1;
         letter-spacing: 0.4px;
         user-select: none;
+        text-align: center;
       }
 
-      footer span.version {
-        font-weight: 600;
-        opacity: 0.8;
+      footer a {
+        color: #93c5fd;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
       }
 
       @keyframes fadeIn {
@@ -84,7 +90,24 @@
     </div>
 
     <footer>
-      Deployed via <strong>Starlight Hyperlift</strong> • <span class="version">v0.0.2</span>
+      <div id="timestamp">Initializing transmission…</div>
+      <div style="margin-top: 4px;">
+        <a href="https://github.com/civnexus/Hyperlift" target="_blank">
+          View on GitHub
+        </a>
+      </div>
     </footer>
+
+    <script>
+      // Generate SCI-FI UTC timestamp
+      const tsElement = document.getElementById("timestamp");
+
+      // Current UTC time in ISO format
+      const now = new Date();
+      const utcString = now.toISOString().replace("T", " ").split(".")[0] + " UTC";
+
+      tsElement.textContent =
+        "Last deployment signal received from Planet Earth at " + utcString;
+    </script>
   </body>
 </html>
