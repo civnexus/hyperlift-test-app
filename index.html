@@ -15,8 +15,7 @@
         align-items: center;
         justify-content: center;
         background: radial-gradient(circle at 30% 20%, #1e40af, #0f172a 70%);
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         color: #e2e8f0;
       }
 
@@ -65,15 +64,15 @@
         text-decoration: underline;
       }
 
+      .version {
+        font-weight: 600;
+        opacity: 0.9;
+        margin-left: 4px;
+      }
+
       @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
       }
     </style>
   </head>
@@ -83,14 +82,21 @@
       <h1>🚀 Hyperlift Test App</h1>
       <p>Hello World!</p>
       <p style="margin-top: 12px;">
-        This is a test application to see if Hyperlift will update
-        once I commit changes.
+        This is a test application to confirm Hyperlift updates after each commit.
       </p>
-      <p style="margin-top: 16px; font-weight: 600;">Good luck!</p>
+      <p style="margin-top: 16px; font-weight: 600;">Good luck, traveler.</p>
     </div>
 
     <footer>
-      <div id="timestamp">Initializing transmission…</div>
+      <div>
+        Deployed via <strong>Starlight Hyperlift</strong>
+        <span class="version">• v0.0.2</span>
+      </div>
+
+      <div id="timestamp" style="margin-top: 4px;">
+        Establishing chronometric link…
+      </div>
+
       <div style="margin-top: 4px;">
         <a href="https://github.com/civnexus/Hyperlift" target="_blank">
           View on GitHub
@@ -99,15 +105,14 @@
     </footer>
 
     <script>
-      // Generate SCI-FI UTC timestamp
-      const tsElement = document.getElementById("timestamp");
-
-      // Current UTC time in ISO format
+      // Generate U.T.C. (Universal Temporal Coordinate)
       const now = new Date();
-      const utcString = now.toISOString().replace("T", " ").split(".")[0] + " UTC";
+      const utcIso = now.toISOString().replace("T", " ").split(".")[0];
 
-      tsElement.textContent =
-        "Last deployment signal received from Planet Earth at " + utcString;
+      document.getElementById("timestamp").textContent =
+        "Last deployment signal received from Planet Earth • " +
+        utcIso +
+        " U.T.C. (Universal Temporal Coordinate)";
     </script>
   </body>
 </html>
