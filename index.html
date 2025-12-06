@@ -11,6 +11,7 @@
         padding: 0;
         min-height: 100vh;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         background: radial-gradient(circle at 30% 20%, #1e40af, #0f172a 70%);
@@ -28,6 +29,7 @@
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
         backdrop-filter: blur(8px);
         animation: fadeIn 1.2s ease-out;
+        margin-bottom: 80px; /* Make space for footer */
       }
 
       h1 {
@@ -40,6 +42,21 @@
         font-size: 1.1rem;
         line-height: 1.5;
         margin: 0;
+      }
+
+      footer {
+        position: fixed;
+        bottom: 20px;
+        font-size: 0.85rem;
+        opacity: 0.6;
+        color: #cbd5e1;
+        letter-spacing: 0.4px;
+        user-select: none;
+      }
+
+      footer span.version {
+        font-weight: 600;
+        opacity: 0.8;
       }
 
       @keyframes fadeIn {
@@ -58,13 +75,16 @@
   <body>
     <div class="card">
       <h1>🚀 Hyperlift Test App</h1>
-      <p>
-        Hello World!<br /><br />
-        This is a test application to see if Hyperlift will update once I commit
-        changes.  
-        <br /><br />
-        <strong>Good luck!</strong>
+      <p>Hello World!</p>
+      <p style="margin-top: 12px;">
+        This is a test application to see if Hyperlift will update
+        once I commit changes.
       </p>
+      <p style="margin-top: 16px; font-weight: 600;">Good luck!</p>
     </div>
+
+    <footer>
+      Deployed via <strong>Starlight Hyperlift</strong> • <span class="version">v0.0.2</span>
+    </footer>
   </body>
 </html>
